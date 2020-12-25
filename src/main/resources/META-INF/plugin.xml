@@ -1,0 +1,48 @@
+<idea-plugin>
+    <id>cn.layne666.mypatcher</id>
+    <name>MyPatcher</name>
+    <vendor email="791270330@qq.com" url="https://layne666.cn">Layne666</vendor>
+
+    <description><![CDATA[
+      Description:
+      <ol>
+        <li>you can manually select the exported modified compiled files or source code files.
+        <li>you can export the modified compiled files or source code files in Version Control according to the revision log.
+        <li>you can select the file manually or copy the path of the modified file in Version Control.
+      </ol>
+      功能说明：
+      <ol>
+        <li>可以手动选择导出的修改过的编译文件或源码文件</li>
+        <li>可以在Version Control中按修改日志导出的修改过的编译文件或源码文件</li>
+        <li>可以手动选择文件或在Version Control中复制修改过的文件路径</li>
+      </ol>
+    ]]></description>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.vcs</depends>
+    <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.modules.java</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <projectService serviceImplementation="cn.layne666.common.PatcherConfig"/>
+    </extensions>
+
+    <actions>
+        <group id="cn.layne666.mypatcher" text="MyPatcher" popup="true" icon="AllIcons.Nodes.Parameter">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="first"/>
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+            <add-to-group group-id="Vcs.RepositoryChangesBrowserMenu" anchor="first"/>
+            <!--            <add-to-group group-id="Vcs.Log.ChangesBrowser" anchor="first"/>-->
+            <add-to-group group-id="Vcs.RepositoryChangesBrowserToolbar" anchor="first"/>
+            <!--<add-to-group group-id="VersionControlsGroup" anchor="first"/>-->
+            <action id="cn.layne666.action.CvsChangeListAction" class="cn.layne666.action.CvsChangeListAction" text="Copy Change List"/>
+            <action id="cn.layne666.action.ExportPatcherAction" class="cn.layne666.action.ExportPatcherAction" text="Export Patcher"/>
+        </group>
+
+
+        <!--<action id="com.sks.ClassesExportAction" class="cn.layne666.action.ClassesExportAction" text="Export _Class">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="first"/>
+        </action>-->
+    </actions>
+</idea-plugin>
