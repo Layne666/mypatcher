@@ -1,11 +1,11 @@
 <idea-plugin>
     <id>cn.layne666.mypatcher</id>
     <name>MyPatcher</name>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <vendor email="791270330@qq.com" url="https://github.com/Layne666/mypatcher">Layne666</vendor>
 
     <description><![CDATA[
-      功能说明：
+      功能说明：一款导出增量补丁文件的IDEA插件
       <ol>
         <li>可以手动选择导出的修改过的编译文件或源码文件</li>
         <li>可以在Version Control中按修改日志导出的修改过的编译文件或源码文件</li>
