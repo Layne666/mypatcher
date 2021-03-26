@@ -4,12 +4,24 @@ plugins {
 }
 
 group 'cn.layne666'
-version '1.0.0'
 
 sourceCompatibility = 1.8
 
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
 repositories {
-    mavenCentral()
+//    mavenCentral()
+    maven {
+        url 'http://maven.aliyun.com/nexus/content/repositories/google'
+    }
+    maven {
+        url 'http://maven.aliyun.com/nexus/content/groups/public/'
+    }
+    maven {
+        url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'
+    }
 }
 
 dependencies {
@@ -20,9 +32,4 @@ dependencies {
 intellij {
     version = '2019.3.1'
     plugins = ['java']
-}
-patchPluginXml {
-    changeNotes """
-      Add change notes here.<br>
-      <em>most HTML tags may be used</em>"""
 }

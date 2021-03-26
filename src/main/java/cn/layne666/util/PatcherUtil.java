@@ -8,7 +8,9 @@ import com.intellij.openapi.compiler.CompileContext;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.ModuleRootManager;
+import com.intellij.openapi.vfs.VfsUtilCore;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.VirtualFileVisitor;
 
 import javax.swing.*;
 import java.io.File;
@@ -18,9 +20,11 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.jetbrains.annotations.NotNull;
+
 public class PatcherUtil {
-    private static final String PLUGIN_NAME = "PatcherX";
-    private static final String NOTIFICATION_TITLE = "PatcherX";
+    private static final String PLUGIN_NAME = "MyPatcher";
+    private static final String NOTIFICATION_TITLE = "MyPatcher";
     private static final NotificationGroup NOTIFICATION_GROUP = new NotificationGroup(PLUGIN_NAME + " log",
             NotificationDisplayType.BALLOON, true);
     private static final Pattern webPathPattern = Pattern.compile("(.+)/(webapp|WebRoot)/(.+)");
@@ -174,10 +178,20 @@ public class PatcherUtil {
         return null;
     }
 
-    public static void main(String[] args) {
-        String s1 = "F:/code/trunk/hs-misc-service/miscservice-server/src/main/java/com/huasheng/misc/util/TradeDateUtil.java";
-        String s2 = "miscservice-server";
-        int i = s1.indexOf(s2);
-        System.out.println(s1.substring(0, i - 1));
+    public static void resolveVirtualFiles(VirtualFile[] data, List<VirtualFile> result) {
+        if (data == null) {
+            return;
+        }
+        for (VirtualFile virtualFile : data) {
+            VfsUtilCore.visitChildrenRecursively(virtualFile, new VirtualFileVisitor() {
+                @Override
+                public boolean visitFile(@NotNull VirtualFile file) {
+                    if (!file.isDirectory()) {
+                        result.add(file);
+                    }
+                    return super.visitFile(file);
+                }
+            });
+        }
     }
 }

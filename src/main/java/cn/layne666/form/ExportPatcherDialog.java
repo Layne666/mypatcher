@@ -4,10 +4,15 @@ import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 import javax.swing.*;
+
+import org.jetbrains.annotations.NotNull;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.LangDataKeys;
@@ -98,8 +103,10 @@ public class ExportPatcherDialog extends JDialog {
 
     private void createUIComponents() {
         VirtualFile[] data = event.getData(LangDataKeys.VIRTUAL_FILE_ARRAY);
-        if (data != null) {
-            fileList = new JBList<>(data);
+        List<VirtualFile> list = new ArrayList<>();
+        PatcherUtil.resolveVirtualFiles(data, list);
+        if (!list.isEmpty()) {
+            fileList = new JBList<>(list.toArray(new VirtualFile[list.size()]));
             fileList.setEmptyText("No File Selected!");
             ToolbarDecorator decorator = ToolbarDecorator.createDecorator(fileList);
             filePanel = decorator.createPanel();
