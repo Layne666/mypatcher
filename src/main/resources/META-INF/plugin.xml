@@ -18,6 +18,7 @@
       <ol>
         <li>2021.03.26 新增功能：WEB路径支持选择修改，不再固定为WEB-INF</li>
         <li>2021.03.27 新增功能：对项目目录进行选择时，会自动选中该目录下所有文件</li>
+        <li>2021.03.31 修复功能：兼容Idea各版本</li>
       </ol>
     ]]></change-notes>
 
@@ -26,6 +27,9 @@
     <depends>com.intellij.modules.vcs</depends>
     <depends>com.intellij.modules.lang</depends>
     <depends>com.intellij.modules.java</depends>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="181"/>
 
     <extensions defaultExtensionNs="com.intellij">
         <projectService serviceImplementation="cn.layne666.common.PatcherConfig"/>

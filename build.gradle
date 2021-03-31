@@ -32,4 +32,5 @@ dependencies {
 intellij {
     version = '2019.3.1'
     plugins = ['java']
+    intellij.updateSinceUntilBuild = false
 }
