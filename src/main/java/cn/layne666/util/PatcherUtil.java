@@ -27,7 +27,7 @@ public class PatcherUtil {
     private static final String NOTIFICATION_TITLE = "MyPatcher";
     private static final NotificationGroup NOTIFICATION_GROUP = new NotificationGroup(PLUGIN_NAME + " log",
             NotificationDisplayType.BALLOON, true);
-    private static final Pattern webPathPattern = Pattern.compile("(.+)/(webapp|WebRoot)/(.+)");
+    private static final Pattern webPathPattern = Pattern.compile("(.+)/(webapp|WebRoot|web|webapps)/(.+)");
 
     public static PathResult getPathResult(Module module, ListModel<VirtualFile> selectedFiles, String pathPrefix,
                                            CompileContext compileContext, String webPath) {

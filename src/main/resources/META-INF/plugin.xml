@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>cn.layne666.mypatcher</id>
     <name>MyPatcher</name>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <vendor email="791270330@qq.com" url="https://github.com/Layne666/mypatcher">Layne666</vendor>
 
     <description><![CDATA[
@@ -19,6 +19,7 @@
         <li>2021.03.26 新增功能：WEB路径支持选择修改，不再固定为WEB-INF</li>
         <li>2021.03.27 新增功能：对项目目录进行选择时，会自动选中该目录下所有文件</li>
         <li>2021.03.31 修复功能：兼容Idea各版本</li>
+        <li>2021.04.01 修复功能：WEB路径支持webapp、WebRoot、web、webapps</li>
       </ol>
     ]]></change-notes>
 
