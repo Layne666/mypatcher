@@ -5,22 +5,29 @@
     <vendor email="791270330@qq.com" url="https://github.com/Layne666/mypatcher">Layne666</vendor>
 
     <description><![CDATA[
+      Description: An IDEA plugin that exports incremental patch files
+      <ul>
+        <li>You can manually select the exported modified compiled file or source code file</li>
+        <li>Modified compiled files or source code files that can be exported according to the modification log in Version Control</li>
+        <li>You can manually select the file or copy the modified file path in Version Control</li>
+      </ul>
+      <hr/>
       功能说明：一款导出增量补丁文件的IDEA插件
-      <ol>
+      <ul>
         <li>可以手动选择导出的修改过的编译文件或源码文件</li>
         <li>可以在Version Control中按修改日志导出的修改过的编译文件或源码文件</li>
         <li>可以手动选择文件或在Version Control中复制修改过的文件路径</li>
-      </ol>
+      </ul>
     ]]></description>
 
     <change-notes><![CDATA[
-      版本更新：
-      <ol>
+      版本更新内容：
+      <ul>
         <li>2021.03.26 新增功能：WEB路径支持选择修改，不再固定为WEB-INF</li>
         <li>2021.03.27 新增功能：对项目目录进行选择时，会自动选中该目录下所有文件</li>
         <li>2021.03.31 修复功能：兼容Idea各版本</li>
         <li>2021.04.01 修复功能：WEB路径支持webapp、WebRoot、web、webapps</li>
-      </ol>
+      </ul>
     ]]></change-notes>
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
