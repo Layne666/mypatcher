@@ -5,14 +5,14 @@
     <vendor email="791270330@qq.com" url="https://github.com/Layne666/mypatcher">Layne666</vendor>
 
     <description><![CDATA[
-      Description: An IDEA plugin that exports incremental patch files
+      An IDEA plugin that exports incremental patch files.
       <ul>
-        <li>You can manually select the exported modified compiled file or source code file</li>
-        <li>Modified compiled files or source code files that can be exported according to the modification log in Version Control</li>
-        <li>You can manually select the file or copy the modified file path in Version Control</li>
+        <li>You can manually select the exported modified compiled file or source code file.</li>
+        <li>Modified compiled files or source code files that can be exported according to the modification log in Version Control.</li>
+        <li>You can manually select the file or copy the modified file path in Version Control.</li>
       </ul>
       <hr/>
-      功能说明：一款导出增量补丁文件的IDEA插件
+      一款导出增量补丁文件的IDEA插件
       <ul>
         <li>可以手动选择导出的修改过的编译文件或源码文件</li>
         <li>可以在Version Control中按修改日志导出的修改过的编译文件或源码文件</li>
