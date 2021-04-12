@@ -21,6 +21,14 @@
     ]]></description>
 
     <change-notes><![CDATA[
+      Version update content:
+      <ul>
+        <li>2021.03.26 new feature: WEB path supports selection and modification, and is no longer fixed as WEB-INF</li>
+        <li>2021.03.27 new feature: when selecting a project directory, all files in the directory will be automatically selected</li>
+        <li>2021.03.31 repair function: compatible with all versions of Idea</li>
+        <li>2021.04.01 Repair function: WEB path supports webapp, WebRoot, web, webapps</li>
+      </ul>
+      <hr/>
       版本更新内容：
       <ul>
         <li>2021.03.26 新增功能：WEB路径支持选择修改，不再固定为WEB-INF</li>
