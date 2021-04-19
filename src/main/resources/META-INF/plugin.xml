@@ -5,7 +5,7 @@
     <vendor email="791270330@qq.com" url="https://github.com/Layne666/mypatcher">Layne666</vendor>
 
     <description><![CDATA[
-      An IDEA plugin that exports incremental patch files.
+      IntelliJ-based IDE plugin that exports incremental patch files.
       <ul>
         <li>You can manually select the exported modified compiled file or source code file.</li>
         <li>Modified compiled files or source code files that can be exported according to the modification log in Version Control.</li>
